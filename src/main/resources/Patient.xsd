@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+targetNamespace="http://www.mphrx.com/soapapitut/PatientXSDPojo" 
+xmlns:tns="http://www.mphrx.com/soapapitut/PatientXSDPojo" 
+elementFormDefault="qualified">
+
+
+<xsd:element name="patientRequest">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name = "Id" type="xsd:int"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+
+
+<xsd:element name="patientResponse">
+	<xsd:complexType>
+		<xsd:sequence>
+			<xsd:element name="patientId" type = "xsd:int"/>
+			<xsd:element name="patientName" type="xsd:string"/>
+			<xsd:element name="patientStatus" type="tns:Status"/>
+			<xsd:element name="patientDeceased" type="xsd:boolean"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+
+
+
+<xsd:simpleType name="Status">
+	<xsd:restriction base="xsd:string">
+		<xsd:enumeration value="ACTIVE"></xsd:enumeration>
+		<xsd:enumeration value="INACTIVE"></xsd:enumeration>
+	</xsd:restriction>
+</xsd:simpleType>
+
+</xsd:schema>
